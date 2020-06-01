@@ -1,0 +1,54 @@
+{
+    "name": "devinweb/payment",
+    "description": "",
+    "keywords": [
+        "devinweb",
+        "payment"
+    ],
+    "homepage": "https://github.com/devinweb/payment",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "darbaoui imad",
+            "email": "imad@devinweb.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Devinweb\\Payment\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Devinweb\\Payment\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Devinweb\\Payment\\PaymentServiceProvider"
+            ],
+            "aliases": {
+                "Payment": "Devinweb\\Payment\\Facades\\Payment"
+            }
+        }
+    }
+}
